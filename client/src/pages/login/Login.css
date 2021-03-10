@@ -1,0 +1,31 @@
+.login {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+
+.login__form > div,
+h1 {
+  margin-top: 20px;
+}
+
+.inputSubmit {
+  min-width: 120px;
+  border-radius: 100px;
+  margin-top: 20px;
+  height: 50px;
+  border: none;
+  background: blueviolet;
+  color: white;
+  font-size: 15px;
+}

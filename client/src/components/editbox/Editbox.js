@@ -4,17 +4,29 @@ import "./Editbox.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Editbox = ({ value, placeholder, Icon }) => {
+const Editbox = ({
+  value,
+  placeholder,
+  Icon,
+  Component,
+  type = "text",
+  display,
+  name,
+  onChange,
+}) => {
   return (
-    <div className="editbox">
+    <div className="editbox" style={{ display: `${display}` }}>
       <i>
         <FontAwesomeIcon icon={Icon} className="editbox__icon" />
       </i>
+
       <input
         className="editbox__input"
-        type="text"
+        name={name}
+        type={type}
         value={value}
         placeholder={placeholder}
+        onChange={onChange}
       />
     </div>
   );
@@ -23,6 +35,9 @@ const Editbox = ({ value, placeholder, Icon }) => {
 Editbox.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Editbox;

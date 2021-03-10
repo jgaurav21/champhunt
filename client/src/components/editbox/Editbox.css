@@ -17,8 +17,15 @@
   border: none;
   line-height: 1;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1rem;
+  /* color: #333; */
+  width: 100%;
+}
+
+.editbox__input::placeholder {
+  color: #aaa;
+  font-size: 0.8rem;
+  font-weight: 100;
 }
 
 .editbox i {
@@ -28,3 +35,9 @@
   transition: 0.5s;
   font-size: 1.1rem;
 }
+
+/* .editbox__input[type="submit"] {
+  text-align: left;
+  max-width: 200px;
+  background: transparent;
+} */
