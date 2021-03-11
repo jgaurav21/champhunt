@@ -17,6 +17,7 @@ const EditProfile = (props) => {
         <Editbox name="userName" value={userName} placeholder="Name" />
         <Select name={Role} />
         <Select name={favIPLTeam} />
+        cd ~/.ssh
         <Select name={favPlayer} />
         <Select name={Batsman} />
         <Select name={Bowler} />
