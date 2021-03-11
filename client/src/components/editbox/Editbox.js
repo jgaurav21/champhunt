@@ -2,13 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Editbox.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Editbox = ({
   value,
   placeholder,
   Icon,
-  Component,
   type = "text",
   display,
   name,

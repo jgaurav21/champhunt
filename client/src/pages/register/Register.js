@@ -4,11 +4,7 @@ import Editbox from "../../components/editbox/Editbox";
 // import ChampButton from "../../components/button/ChampButton";
 import "../login/Login.css";
 
-import {
-  faCheckCircle,
-  faLock,
-  faMobileAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLock, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import Toast from "../../components/alert/alert";
 import { register } from "../../actions/auth";
@@ -30,16 +26,6 @@ const Register = ({ register }) => {
   const clickRegister = () => {
     // e.preventDefault();
     register(mobile, password, password2);
-  };
-
-  const handleReset = (e) => {
-    e.preventDefault();
-    setRegisterData({
-      ...registerData,
-      mobile: "",
-      password: "",
-      password2: "",
-    });
   };
 
   return (

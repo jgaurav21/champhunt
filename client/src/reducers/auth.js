@@ -1,4 +1,9 @@
-import { REGISTER_FAIL, REGISTER_USER } from "../actions/types";
+import {
+  LOGIN_FAILED,
+  LOGIN_SUCCESS,
+  REGISTER_FAIL,
+  REGISTER_USER,
+} from "../actions/types";
 
 const initialState = {
   isAuthenticated: null,
@@ -22,6 +27,19 @@ export const auth = (state = initialState, action) => {
         ...state,
         isAuthenticated: false,
         loading: true,
+      };
+    case LOGIN_SUCCESS:
+      localStorage.setItem("token", payload);
+      return {
+        isAuthenticated: true,
+        loading: false,
+        token: payload.token,
+      };
+    case LOGIN_FAILED:
+      return {
+        isAuthenticated: true,
+        loading: false,
+        token: payload,
       };
     default:
       return { ...state };
