@@ -7,6 +7,7 @@ import store from "./store";
 import Dashboard from "./pages/dashboard/Dashboard";
 
 import Profile from "./pages/profile/Profile";
+import EditProfile from "./pages/profile/EditProfile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path="/Register" component={Register} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/profile" component={Profile} />
+            <Route exact path="/profile/edit" component={EditProfile} />
           </Switch>
         </div>
       </Router>
