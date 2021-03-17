@@ -19,7 +19,7 @@ const ProfileCover = ({
         <Avatar src={displayPic} />
       </div>
 
-      <div class="profileCover__editProfile">
+      <div className="profileCover__editProfile">
         <h1>{profileName}</h1>
         <EditIcon />
       </div>

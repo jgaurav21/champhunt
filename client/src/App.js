@@ -8,6 +8,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
+import UpdateProfile from "./pages/profile/UpdateProfile";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Route exact path="/Register" component={Register} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/profile/edit" component={EditProfile} />
+            <Route exact path="/profile/edit" component={UpdateProfile} />
           </Switch>
         </div>
       </Router>

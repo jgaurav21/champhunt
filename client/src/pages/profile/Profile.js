@@ -9,7 +9,7 @@ const Profile = (props) => {
   return (
     <div className="profile">
       <ProfileSidebar />
-      <div class="profile__body">
+      <div className="profile__body">
         <ProfileCover
           coverPhoto="https://c.ndtvimg.com/2020-04/u3a8nia8_ipl-trophy-twitter_625x300_13_April_20.jpg"
           displayPic="https://images.news18.com/ibnlive/uploads/2020/08/1598011792_rohit-sharma.jpg"

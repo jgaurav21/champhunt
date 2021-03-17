@@ -6,3 +6,5 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILED = "LOGIN_FAILED";
+
+export const PROFILE_UPDATED = 'PROFILE_UPDATED';

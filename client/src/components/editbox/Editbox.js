@@ -14,10 +14,10 @@ const Editbox = ({
 }) => {
   return (
     <div className="editbox" style={{ display: `${display}` }}>
-      <i>
+      {Icon ? (<i>
         <FontAwesomeIcon icon={Icon} className="editbox__icon" />
-      </i>
-
+      </i>) : <i className='editbox__icon'></i>
+      }
       <input
         className="editbox__input"
         name={name}
