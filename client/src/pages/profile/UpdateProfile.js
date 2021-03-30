@@ -11,6 +11,11 @@ import CountrySelect from "../../components/countrySelect/CountrySelect";
 import csc from "country-state-city";
 
 const UpdateProfile = (props) => {
+  const [country, setCountry] = useState("");
+  const handleChange = (e) => {
+    e.preventDefault();
+    setCountry(...country, setCountry(e.target.value));
+  };
   return (
     <div className="updateProfile">
       <div className="updateProfile__container">
@@ -63,12 +68,15 @@ const UpdateProfile = (props) => {
                   <MuiSelect
                     name="Country"
                     options={csc.getAllCountries().map((a) => a.name)}
+                    value={country}
+                    onChange={(e) => handleChange(e)}
                   />
                 </Grid>
                 <Grid item xs>
                   <MuiSelect
                     name="City"
                     options={csc.getStatesOfCountry("IN").map((a) => a.name)}
+                    value={country}
                   />
                 </Grid>
               </Grid>

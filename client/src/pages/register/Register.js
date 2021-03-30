@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Editbox from "../../components/editbox/Editbox";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+
 // import ChampButton from "../../components/button/ChampButton";
 import "../login/Login.css";
 
@@ -32,7 +36,9 @@ const Register = ({ register }) => {
     <>
       {<Toast />}
       <div className="login">
-        <form className="login__form" onSubmit={clickRegister}>
+        <div className="register__backgroundImage"></div>
+
+        <form className="login__form glass" onSubmit={clickRegister}>
           <h1>Register</h1>
           <Editbox
             name="mobile"
@@ -40,6 +46,7 @@ const Register = ({ register }) => {
             Icon={faMobileAlt}
             value={mobile}
             onChange={(e) => setValue(e)}
+            color="rgba(255, 255, 255, 0.5)"
           />
           <Editbox
             name="password"
@@ -48,6 +55,7 @@ const Register = ({ register }) => {
             Icon={faLock}
             value={password}
             onChange={(e) => setValue(e)}
+            color="rgba(255, 255, 255, 0.5)"
           />
           <Editbox
             name="password2"
@@ -56,8 +64,14 @@ const Register = ({ register }) => {
             Icon={faLock}
             value={password2}
             onChange={(e) => setValue(e)}
+            color="rgba(255, 255, 255, 0.5)"
           />
           <input className="inputSubmit" type="submit" value="Register" />
+
+          <div className="login__social">
+            <FontAwesomeIcon icon={faFacebook} size="2x" />
+            <FontAwesomeIcon icon={faGoogle} size="2x" />
+          </div>
         </form>
       </div>
     </>

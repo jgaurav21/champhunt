@@ -6,6 +6,7 @@ import {
   REGISTER_USER,
 } from "./types";
 import { setAlert } from "./alert";
+import { useGoogleLogin } from "react-google-login";
 
 export const register = (mobile, password, password2) => async (dispatch) => {
   try {
@@ -62,4 +63,21 @@ export const login = (mobile, password) => async (dispatch) => {
       type: LOGIN_FAILED,
     });
   }
+};
+
+const clientId =
+  "618867215095-k3j6e2v0v4dqjijpsq451rbjpu5u4kqj.apps.googleusercontent.com";
+export const googleAuth = () => async (dispatch) => {
+  const onSuccess = (res) => {
+    console.log("Login Success: currentUser:", res.profileObj);
+    alert(
+      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
+    );
+  };
+  const { signIn } = useGoogleLogin({
+    onSuccess,
+    clientId,
+    isSignedIn: true,
+    accessType: "offline",
+  });
 };

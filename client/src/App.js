@@ -9,6 +9,9 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
 import UpdateProfile from "./pages/profile/UpdateProfile";
+import AddPost from "./pages/posts/AddPost";
+import Post from "./pages/posts/Post";
+import Feed from "./pages/posts/Feed";
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/profile/edit" component={UpdateProfile} />
+            <Route exact path="/post" component={Feed} />
           </Switch>
         </div>
       </Router>

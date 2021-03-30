@@ -2,21 +2,53 @@
   width: 100%;
   min-height: 100vh;
   position: relative;
+  /* background: url("https://wallpapercave.com/wp/wp2686809.jpg"); */
+  /* backdrop-filter: blur(10px); */
 }
 
+.login__backgroundImage {
+  /* background: url("https://www.champhunt.com/assets/img/bodybg.jpg"); */
+  background: linear-gradient(
+      129deg,
+      rgba(242, 47, 70, 0.8),
+      rgba(0, 140, 255, 0.8)
+    ),
+    url("https://www.champhunt.com/assets/img/bodybg.jpg") 50% 50% no-repeat;
+  min-height: 100vh;
+  min-width: fit-content;
+  filter: blur(4px);
+  margin: 0;
+  padding: 0;
+}
+
+.register__backgroundImage {
+  /* background: url("https://image.freepik.com/free-vector/abstract-geometric-background-with-purple-blue-gradient-circles_7433-107.jpg"); */
+  background: linear-gradient(to right, #004e92, #a75bc5fb);
+  min-height: 100vh;
+  filter: blur(4px);
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* https://image.freepik.com/free-vector/abstract-geometric-background-with-purple-blue-gradient-circles_7433-107.jpg */
 .login__form {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   align-items: center;
+  padding: 40px;
+  min-width: 300px;
 }
 
 .login__form > div,
 .login__form > h1 {
   margin-top: 20px;
+  color: linear-gradient(to right, #004e92, #a75bc5fb);
 }
 
 .inputSubmit {
@@ -27,5 +59,27 @@
   border: none;
   background: blueviolet;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+}
+
+.login__social > svg {
+  padding: 10px;
+  color: white;
+}
+
+.login__social > svg :hover {
+  cursor: pointer;
+  color: "#5751ac";
+}
+
+.login__signUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login__signUp > label {
+  margin-bottom: 5px;
 }

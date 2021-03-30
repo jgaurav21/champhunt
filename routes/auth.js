@@ -4,6 +4,13 @@ const User = require("../Models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const axios = require("axios");
+
+// const pino = require("express-pino-logger")();
+const client = require("twilio")(
+  config.get("TWILIO_ACCOUNT_SID"),
+  config.get("TWILIO_AUTH_TOKEN")
+);
 
 //@route    POST /api/auth
 //@desc     authenticate user
@@ -29,6 +36,51 @@ router.post("/", async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
+  }
+});
+
+router.post("/otp", (req, res) => {
+  res.header("Content-Type", "application/json");
+  client.messages
+    .create({
+      from: config.get("TWILIO_PHONE_NUMBER"),
+      to: req.body.to,
+      body: req.body.body,
+    })
+    .then(() => {
+      res.send(JSON.stringify({ success: true }));
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(JSON.stringify({ success: false }));
+    });
+});
+
+router.post("/sendOtp", async (req, res) => {
+  try {
+    const response = `https://2factor.in/API/V1/${config.get(
+      "APIKey"
+    )}/SMS/+91${req.body.mobile}/AUTOGEN`;
+    const otpRes = await axios.get(response);
+    console.log(otpRes);
+    res.json(otpRes.data);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+router.post("/verifyOtp", async (req, res) => {
+  try {
+    const { session, otp } = req.body;
+    const response = `https://2factor.in/API/V1/${config.get(
+      "APIKey"
+    )}/SMS/VERIFY/${session}/${otp}`;
+    const validate = await axios.get(response);
+
+    res.json(validate.data);
+  } catch (err) {
+    console.log(err.message);
+    res.send(500).json({ msg: "OTP validation failed" });
   }
 });
 

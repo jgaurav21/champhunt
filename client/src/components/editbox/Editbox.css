@@ -1,7 +1,8 @@
 .editbox {
   max-width: 380px;
   width: 100%;
-  background-color: #d3d0d0;
+  /* background-color: #d3d0d0; */
+  background-color: rgba(255, 255, 255, 0.1);
   /* margin: 10px 0; */
   height: 55px;
   border-radius: 55px;
@@ -19,11 +20,12 @@
   font-weight: 600;
   font-size: 1rem;
   /* color: #333; */
+  color: white;
   width: 100%;
 }
 
 .editbox__input::placeholder {
-  color: #aaa;
+  color: rgb(255, 255, 255);
   font-size: 0.8rem;
   font-weight: 100;
 }
@@ -31,11 +33,10 @@
 .editbox i {
   text-align: center;
   line-height: 55px;
-  color: #acacac;
+  color: #f3f3f3;
   transition: 0.5s;
   font-size: 1.1rem;
 }
-
 
 /* .editbox__input[type="submit"] {
   text-align: left;

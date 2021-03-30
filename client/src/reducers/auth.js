@@ -3,6 +3,8 @@ import {
   LOGIN_SUCCESS,
   REGISTER_FAIL,
   REGISTER_USER,
+  GOOGLE_LOGIN,
+  GOOGLE_LOGOUT,
 } from "../actions/types";
 
 const initialState = {
@@ -40,6 +42,12 @@ export const auth = (state = initialState, action) => {
         isAuthenticated: true,
         loading: false,
         token: payload,
+      };
+    case GOOGLE_LOGIN:
+      return {
+        isAuthenticated: true,
+        loading: false,
+        token: payload.token,
       };
     default:
       return { ...state };

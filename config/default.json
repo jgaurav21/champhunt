@@ -1,4 +1,8 @@
 {
   "mongoURI": "mongodb://champ:champ@champ-shard-00-00.hyb3q.mongodb.net:27017,champ-shard-00-01.hyb3q.mongodb.net:27017,champ-shard-00-02.hyb3q.mongodb.net:27017/ChampHunt?ssl=true&replicaSet=atlas-12tuwl-shard-0&authSource=admin&retryWrites=true&w=majority",
-  "jwtSecret": "jwtToken"
+  "jwtSecret": "jwtToken",
+  "TWILIO_ACCOUNT_SID": "AC2be8cae076d935ffecfb328ac98ea486",
+  "TWILIO_AUTH_TOKEN": "ea72a7af926c18abb78ec42b84af09e2",
+  "TWILIO_PHONE_NUMBER": "+19728107403",
+  "APIKey": "490433ea-8fbb-11eb-a9bc-0200cd936042"
 }

@@ -4,9 +4,12 @@ import "./Login.css";
 import Editbox from "../../components/editbox/Editbox";
 
 import { faLock, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import ChampButton from "../../components/button/ChampButton";
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Login = ({ login }) => {
   const [loginData, setLoginData] = useState({
@@ -29,7 +32,8 @@ const Login = ({ login }) => {
   return (
     <div className="login">
       {/* <Toast /> */}
-      <form className="login__form" onSubmit={(e) => clickLogin(e)}>
+      <div className="login__backgroundImage"></div>
+      <form className="login__form glass" onSubmit={(e) => clickLogin(e)}>
         <h1>Login Page</h1>
         <Editbox
           name="mobile"
@@ -48,7 +52,19 @@ const Login = ({ login }) => {
         />
         <input className="inputSubmit" type="submit" value="Login" />
 
-        <ChampButton value="Login with OTP" variant="outlined" />
+        <ChampButton
+          value="Login with OTP"
+          variant="contained"
+          color="secondary"
+        />
+        <div className="login__social">
+          {/* <FontAwesomeIcon icon={faFacebook} size="2x" /> */}
+          <FontAwesomeIcon icon={faGoogle} size="2x" />
+        </div>
+        <div className="login__signUp">
+          <label>Not Registered Yet!!</label>
+          <Link to="/register">Sign Up</Link>
+        </div>
       </form>
     </div>
   );

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Select, InputLabel, MenuItem, FormControl } from "@material-ui/core";
 import { useState } from "react";
 
-const MuiSelect = ({ name, options, defaultValue }) => {
+const MuiSelect = ({ name, options, defaultValue, onChange, value }) => {
   const [data, setData] = useState("");
 
   const handleChange = (e) => {
@@ -17,8 +17,9 @@ const MuiSelect = ({ name, options, defaultValue }) => {
         <Select
           label={name}
           defaultValue={defaultValue}
-          value={data}
-          onChange={(e) => handleChange(e)}
+          value={value}
+          // onChange={(e) => handleChange(e)}
+          onChange={onChange}
         >
           {options.map((option, index) => (
             <MenuItem key={index} value={option}>
