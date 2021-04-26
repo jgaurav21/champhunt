@@ -10,6 +10,8 @@ import { connect } from "react-redux";
 import { login } from "../../actions/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import googleIcon from "../../images/google2.png";
+import RadioButton from "../../components/radio/Radio";
 
 const Login = ({ login }) => {
   const [loginData, setLoginData] = useState({
@@ -28,6 +30,7 @@ const Login = ({ login }) => {
     e.preventDefault();
     login(mobile, password);
   };
+  const loginType = ["Password", "OTP"];
 
   return (
     <div className="login">
@@ -42,6 +45,7 @@ const Login = ({ login }) => {
           value={mobile}
           onChange={(e) => handleChange(e)}
         />
+        <RadioButton options={loginType} />
         <Editbox
           name="password"
           type="password"
@@ -59,7 +63,8 @@ const Login = ({ login }) => {
         />
         <div className="login__social">
           {/* <FontAwesomeIcon icon={faFacebook} size="2x" /> */}
-          <FontAwesomeIcon icon={faGoogle} size="2x" />
+          {/* <FontAwesomeIcon icon={faGoogle} size="2x" /> */}
+          <img src={googleIcon} className="login__social__google" />
         </div>
         <div className="login__signUp">
           <label>Not Registered Yet!!</label>

@@ -7,15 +7,21 @@
 }
 
 .login__backgroundImage {
-  /* background: url("https://www.champhunt.com/assets/img/bodybg.jpg"); */
+  /* background: url("https://www.champhunt.com/assets/img/bodybg.jpg") 50% 50%
+    no-repeat; */
   background: linear-gradient(
       129deg,
-      rgba(242, 47, 70, 0.8),
-      rgba(0, 140, 255, 0.8)
+      /* rgba(242, 47, 70, 0.6),
+      #a75bc5f5,
+      rgba(99, 50, 235, 0.8) */
+        rgba(49, 49, 49, 0.514),
+      rgba(1, 1, 17, 0.6)
     ),
-    url("https://www.champhunt.com/assets/img/bodybg.jpg") 50% 50% no-repeat;
+    /* url("../../images/stadium.jpeg") 50% 50% no-repeat; */
+      url("https://www.champhunt.com/assets/img/bodybg.jpg") 50% 50% no-repeat;
   min-height: 100vh;
-  min-width: fit-content;
+  background-size: 100%;
+  width: 100%;
   filter: blur(4px);
   margin: 0;
   padding: 0;
@@ -23,7 +29,16 @@
 
 .register__backgroundImage {
   /* background: url("https://image.freepik.com/free-vector/abstract-geometric-background-with-purple-blue-gradient-circles_7433-107.jpg"); */
-  background: linear-gradient(to right, #004e92, #a75bc5fb);
+  /* background: linear-gradient(to right, #004e92, #a75bc5fb); */
+  background: linear-gradient(
+      129deg,
+      /* rgba(242, 47, 70, 0.6),
+      #a75bc5f5,
+      rgba(99, 50, 235, 0.8) */
+        rgba(49, 49, 49, 0.4),
+      rgba(1, 1, 17, 0.6)
+    ),
+    url("../../images/stadium.jpeg") 50% 50% no-repeat;
   min-height: 100vh;
   filter: blur(4px);
   margin: 0;
@@ -35,6 +50,7 @@
 /* https://image.freepik.com/free-vector/abstract-geometric-background-with-purple-blue-gradient-circles_7433-107.jpg */
 .login__form {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   position: absolute;
   top: 50%;
@@ -47,6 +63,7 @@
 
 .login__form > div,
 .login__form > h1 {
+  color: white;
   margin-top: 20px;
   color: linear-gradient(to right, #004e92, #a75bc5fb);
 }
@@ -67,6 +84,11 @@
 .login__social > svg {
   padding: 10px;
   color: white;
+}
+
+.login__social__google {
+  width: 40px;
+  height: 40px;
 }
 
 .login__social > svg :hover {

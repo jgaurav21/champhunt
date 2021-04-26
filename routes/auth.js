@@ -62,22 +62,28 @@ router.post("/sendOtp", async (req, res) => {
       "APIKey"
     )}/SMS/+91${req.body.mobile}/AUTOGEN`;
     const otpRes = await axios.get(response);
-    console.log(otpRes);
-    res.json(otpRes.data);
+    const data = otpRes.data;
+    res.json({ data, mobile: `${req.body.mobile}` });
   } catch (err) {
     console.log(err.message);
   }
 });
 
+//@Route  POST
+//@desc   Verify the otp
+//@access public
 router.post("/verifyOtp", async (req, res) => {
   try {
-    const { session, otp } = req.body;
+    const { session, otp, mobile } = req.body;
     const response = `https://2factor.in/API/V1/${config.get(
       "APIKey"
     )}/SMS/VERIFY/${session}/${otp}`;
     const validate = await axios.get(response);
+    const user = await User.findOne({ mobile });
+    if (!user) res.json({ msg: "Mobile no is not registered" });
+    const token = jwt.sign({ _id: user._id }, config.get("jwtSecret"));
 
-    res.json(validate.data);
+    res.json(token);
   } catch (err) {
     console.log(err.message);
     res.send(500).json({ msg: "OTP validation failed" });

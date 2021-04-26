@@ -61,4 +61,15 @@ router.post(
   }
 );
 
+//@route
+router.post("/createToken", async (req, res) => {
+  try {
+    const user = await User.findOne(req.body.id);
+    const token = jwt.sign({ _id: user._id }, config.get("jwtSecret"));
+    res.json(token);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
 module.exports = router;

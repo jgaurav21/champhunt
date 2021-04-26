@@ -6,7 +6,6 @@ import {
   REGISTER_USER,
 } from "./types";
 import { setAlert } from "./alert";
-import { useGoogleLogin } from "react-google-login";
 
 export const register = (mobile, password, password2) => async (dispatch) => {
   try {
@@ -65,19 +64,39 @@ export const login = (mobile, password) => async (dispatch) => {
   }
 };
 
-const clientId =
-  "618867215095-k3j6e2v0v4dqjijpsq451rbjpu5u4kqj.apps.googleusercontent.com";
-export const googleAuth = () => async (dispatch) => {
-  const onSuccess = (res) => {
-    console.log("Login Success: currentUser:", res.profileObj);
-    alert(
-      `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
-    );
-  };
-  const { signIn } = useGoogleLogin({
-    onSuccess,
-    clientId,
-    isSignedIn: true,
-    accessType: "offline",
-  });
+export const loginWithGoogle = (user) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = JSON.stringify(user);
+
+    const res = await axios.post("/api/user/createToken", body, config);
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res,
+    });
+  } catch (err) {
+    console.log(err.message);
+    dispatch({
+      type: LOGIN_FAILED,
+    });
+  }
+};
+
+export const sendOtp = (mobile) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = JSON.stringify(mobile);
+
+    const response = await axios.post("/api/sendOtp", body, config);
+  } catch (err) {}
 };

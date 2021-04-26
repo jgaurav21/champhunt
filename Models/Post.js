@@ -12,6 +12,9 @@ const PostSchema = new Schema({
   name: {
     type: String,
   },
+  image: {
+    type: String,
+  },
   runs: [
     {
       user: {
