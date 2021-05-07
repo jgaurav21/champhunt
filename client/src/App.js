@@ -16,6 +16,7 @@ import Canvas from "./components/canvas/Canvas";
 import LoginPage from "./pages/login/LoginPage";
 import RegisterPage from "./pages/register/RegisterPage";
 import MobileLogin from "./pages/login/MobileLogin";
+import GoogleLogin from "./pages/login/GoogleLogin";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/canvas" component={Canvas} />
             <Route exact path="/registerPage" component={RegisterPage} />
             <Route exact path="/mobileLogin" component={MobileLogin} />
+            <Route exact path="/googleLogin" component={GoogleLogin} />
           </Switch>
         </div>
       </Router>

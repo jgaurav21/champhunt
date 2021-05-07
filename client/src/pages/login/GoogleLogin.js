@@ -1,3 +1,5 @@
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useGoogleLogin } from "react-google-login";
 
@@ -6,13 +8,13 @@ import { useGoogleLogin } from "react-google-login";
 const clientId =
   "707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com";
 
-function LoginHooks() {
+const GoogleLogin = () => {
   const onSuccess = (res) => {
     console.log("Login Success: currentUser:", res.profileObj);
     alert(
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );
-    refreshTokenSetup(res);
+    // refreshTokenSetup(res);
   };
 
   const onFailure = (res) => {
@@ -33,12 +35,11 @@ function LoginHooks() {
   });
 
   return (
-    <button onClick={signIn} className="button">
-      <img src="icons/google.svg" alt="google login" className="icon"></img>
-
-      <span className="buttonText">Sign in with Google</span>
-    </button>
+    <div onClick={signIn}>
+      <FontAwesomeIcon icon={faGoogle} />
+    </div>
   );
-}
+};
 
-export default LoginHooks;
+GoogleLogin.propType = {};
+export default GoogleLogin;

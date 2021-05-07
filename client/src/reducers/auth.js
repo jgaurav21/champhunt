@@ -31,17 +31,19 @@ export const auth = (state = initialState, action) => {
         loading: true,
       };
     case LOGIN_SUCCESS:
-      localStorage.setItem("token", payload);
+      localStorage.setItem("token", payload.token);
       return {
         isAuthenticated: true,
         loading: false,
         token: payload.token,
       };
     case LOGIN_FAILED:
+      localStorage.removeItem("token");
+
       return {
-        isAuthenticated: true,
+        isAuthenticated: false,
         loading: false,
-        token: payload,
+        token: null,
       };
     case GOOGLE_LOGIN:
       return {

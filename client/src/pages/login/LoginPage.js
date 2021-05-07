@@ -12,6 +12,7 @@ import { login } from "../../actions/auth";
 import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
+import GoogleLogin from "./GoogleLogin";
 
 const LoginPage = ({ login }) => {
   const [loginData, setLoginData] = useState({ mobile: "", password: "" });
@@ -56,7 +57,8 @@ const LoginPage = ({ login }) => {
               <input type="submit" value="LOGIN" />
             </div>
             <div className="loginPage__socialLogin">
-              <FontAwesomeIcon icon={faGoogle} />
+              {/* <FontAwesomeIcon icon={faGoogle} /> */}
+              <GoogleLogin />
               <Link to={"/MobileLogin"}>
                 <FontAwesomeIcon icon={faPhone} />
               </Link>

@@ -5,11 +5,42 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const axios = require("axios");
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
-// const pino = require("express-pino-logger")();
-const client = require("twilio")(
-  config.get("TWILIO_ACCOUNT_SID"),
-  config.get("TWILIO_AUTH_TOKEN")
+passport.serializeUser(function (user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+  done(null, user);
+});
+
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: config.get("googleClientId"),
+      clientSecret: config.get("googleClientSecret"),
+      callbackURL: "http://localhost:3000",
+      passReqToCallback: true,
+    },
+    function (request, accessToken, refreshToken, profile, done) {
+      return done(err, profile);
+    }
+  )
+);
+
+router.get("/google", async (req, res) => {
+  passport.authenticate("google", { scope: ["email", "profile"] });
+  res.send("success");
+});
+
+router.get(
+  "/google/callback",
+  passport.authenticate("google", { failureRedirect: "/failed" }),
+  function (req, res) {
+    res.redirect("/profile");
+  }
 );
 
 //@route    POST /api/auth
@@ -24,7 +55,7 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ msg: "Invalid Mobile Number" });
     }
 
-    const validPassword = bcrypt.compare(password, user.password);
+    const validPassword = await bcrypt.compare(password, user.password);
 
     if (!validPassword) {
       return res.status(400).json({ msg: "Invalid mobile or password" });
@@ -37,23 +68,6 @@ router.post("/", async (req, res) => {
     console.error(err.message);
     res.status(500).send("Server error");
   }
-});
-
-router.post("/otp", (req, res) => {
-  res.header("Content-Type", "application/json");
-  client.messages
-    .create({
-      from: config.get("TWILIO_PHONE_NUMBER"),
-      to: req.body.to,
-      body: req.body.body,
-    })
-    .then(() => {
-      res.send(JSON.stringify({ success: true }));
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send(JSON.stringify({ success: false }));
-    });
 });
 
 router.post("/sendOtp", async (req, res) => {
