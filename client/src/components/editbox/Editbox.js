@@ -12,11 +12,13 @@ const Editbox = ({
   name,
   color,
   onChange,
+  border,
+  width
 }) => {
   return (
     <div
       className="editbox"
-      style={{ display: `${display}`, backgroundColor: `${color}` }}
+      style={{ display: `${display}`, backgroundColor: `${color}`, border:`${border}`,width:`${width}` }}
     >
       {Icon ? (
         <i>

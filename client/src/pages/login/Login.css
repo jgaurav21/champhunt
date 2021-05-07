@@ -63,7 +63,7 @@
 
 .login__form > div,
 .login__form > h1 {
-  color: white;
+  /* color: white; */
   margin-top: 20px;
   color: linear-gradient(to right, #004e92, #a75bc5fb);
 }

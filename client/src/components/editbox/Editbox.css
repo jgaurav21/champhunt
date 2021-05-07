@@ -10,6 +10,10 @@
   grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
+  border-left: 0.5px solid white;
+  border-top: 0.5px solid white;
+
+  /* box-shadow: 2px 3px rgba(179, 179, 179, 1); */
 }
 
 .editbox__input {
@@ -20,12 +24,13 @@
   font-weight: 600;
   font-size: 1rem;
   /* color: #333; */
-  color: white;
+  /* color: rgb(216, 216, 216); */
   width: 100%;
 }
 
 .editbox__input::placeholder {
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
+  color: black;
   font-size: 0.8rem;
   font-weight: 100;
 }

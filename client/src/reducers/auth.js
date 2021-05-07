@@ -3,7 +3,6 @@ import {
   LOGIN_SUCCESS,
   REGISTER_FAIL,
   REGISTER_USER,
-  GENERATE_OTP,
   GOOGLE_LOGIN,
   GOOGLE_LOGOUT,
 } from "../actions/types";

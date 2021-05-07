@@ -1,9 +1,14 @@
 import axios from "axios";
 import {
+  GENERATE_OTP,
+  GENERATE_OTP_SUCCESS,
   LOGIN_FAILED,
   LOGIN_SUCCESS,
   REGISTER_FAIL,
   REGISTER_USER,
+  VERIFY_OTP,
+  VERIFY_OTP_FAILED,
+  VERIFY_OTP_SUCCESS,
 } from "./types";
 import { setAlert } from "./alert";
 
@@ -38,6 +43,7 @@ export const register = (mobile, password, password2) => async (dispatch) => {
 
 export const login = (mobile, password) => async (dispatch) => {
   try {
+    // debugger;
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -47,12 +53,13 @@ export const login = (mobile, password) => async (dispatch) => {
     const body = { mobile, password };
 
     const res = await axios.post("/api/auth", body, config);
-
+    console.log(res);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
   } catch (err) {
+    console.log("err");
     const captured = err.response.data.errors;
 
     if (captured) {
@@ -95,8 +102,41 @@ export const sendOtp = (mobile) => async (dispatch) => {
       },
     };
 
-    const body = JSON.stringify(mobile);
+    const body = JSON.stringify({ mobile });
 
-    const response = await axios.post("/api/sendOtp", body, config);
+    console.log(body);
+
+    const response = await axios.post("/api/auth/sendOtp", body, config);
+
+    dispatch({
+      type: GENERATE_OTP_SUCCESS,
+      payload: response,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const verifyOtp = (session, otp, mobile) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = JSON.stringify({ session, otp });
+
+    const res = await axios.post("/api/auth/verifyOtp", body, config);
+    if (res.data.Status === "Success") {
+      dispatch({
+        type: VERIFY_OTP_SUCCESS,
+        payload: res.data,
+      });
+    } else {
+      dispatch({
+        type: VERIFY_OTP_FAILED,
+      });
+    }
   } catch (err) {}
 };

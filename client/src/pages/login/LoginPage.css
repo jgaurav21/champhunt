@@ -1,0 +1,52 @@
+.loginPage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginPage__form {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.loginPage__form > div {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.loginPage__form > div > input,
+.loginPage__form > div > button {
+  margin-left: 15px;
+}
+
+.loginPage__form > div > label {
+  width: 80px;
+}
+
+.loginPage__button {
+  display: flex;
+  justify-content: center;
+}
+
+.loginPage__button :hover {
+  cursor: pointer;
+}
+
+.loginPage__socialLogin {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.loginPage__socialLogin svg {
+  border: 1px solid white;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
