@@ -15,10 +15,20 @@
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(15, 15, 15, 0.253);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  /* background: linear-gradient(145deg, #3b6064, rgba(0, 208, 186, 0.9)); */
+}
+
+.glass__dark {
+  background: linear-gradient(145deg, #fcfcfc54, rgba(237, 247, 246, 0.3));
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.438);
 }

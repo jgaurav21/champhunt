@@ -8,7 +8,8 @@
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(145deg, #3b6064, rgba(0, 208, 186, 0.9));
+  background: url("https://t3.ftcdn.net/jpg/03/29/01/92/360_F_329019217_YbZhlVLTpF3UnTxu8Hl9YSz7lpkQftm3.jpg"),
+    linear-gradient(145deg, #3b6064, rgba(0, 208, 186, 0.9));
 
   background-blend-mode: multiply;
   background-position: left;
