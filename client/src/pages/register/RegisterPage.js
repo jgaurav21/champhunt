@@ -62,70 +62,83 @@ const RegisterPage = ({
   };
 
   return (
-    <div className="canvas">
-      <div className="canvas__glass">
-        <div className="loginPage">
-          <form className="loginPage__form" onSubmit={(e) => clickSubmit(e)}>
-            <div className="mobile">
-              <label htmlFor="mobile">MOBILE</label>
-              <input
-                type="text"
-                placeholder="MOBILE"
-                name="mobile"
-                value={mobile}
-                maxLength="10"
-                onChange={(e) => handleChange(e)}
-              />
-              <button onClick={(e) => clickSendOTP(e)}>SEND OTP</button>
-            </div>
+    <div className="canvas__ball">
+      <div className="loginPage__title">WELCOME TO CHAMPHUNT</div>
+      {/* <div className="loginPage__subtitle">CHAMP LOGIN</div> */}
+      <div className="card">
+        <div className="canvas__bat"></div>
+        <div className="face">
+          <div className="loginPage">
+            <form className="loginPage__form" onSubmit={(e) => clickSubmit(e)}>
+              <div className="mobile">
+                {/* <label htmlFor="mobile">MOBILE</label> */}
+                <input
+                  className="inputBox"
+                  type="text"
+                  placeholder="MOBILE"
+                  name="mobile"
+                  value={mobile}
+                  maxLength="10"
+                  onChange={(e) => handleChange(e)}
+                />
+                <button onClick={(e) => clickSendOTP(e)}>SEND OTP</button>
+              </div>
 
-            <div className="OTP">
-              <label htmlFor="OTP">ENTER OTP</label>
-              <input
-                type="text"
-                placeholder="ENTER OTP"
-                name="otp"
-                value={otp}
-                disabled={disableOtp}
-                onChange={(e) => handleChange(e)}
-              />
-              <button disabled={disableOtp} onClick={(e) => clickVerifyOtp(e)}>
-                VERIFY OTP
-              </button>
-            </div>
+              <div className="OTP">
+                {/* <label htmlFor="OTP">ENTER OTP</label> */}
+                <input
+                  className="inputBox"
+                  type="text"
+                  placeholder="ENTER OTP"
+                  name="otp"
+                  value={otp}
+                  disabled={disableOtp}
+                  onChange={(e) => handleChange(e)}
+                />
+                <button
+                  disabled={disableOtp}
+                  onClick={(e) => clickVerifyOtp(e)}
+                >
+                  VERIFY OTP
+                </button>
+              </div>
 
-            <div className="registerPage__password">
-              <label htmlFor="password">PASSWORD</label>
-              <input
-                type="password"
-                placeholder="PASSWORD"
-                disabled={disablePassword}
-                name="password"
-                value={password}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
+              <div className="registerPage__password">
+                {/* <label htmlFor="password">PASSWORD</label> */}
+                <input
+                  className="inputBox"
+                  type="password"
+                  placeholder="PASSWORD"
+                  disabled={disablePassword}
+                  name="password"
+                  value={password}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
 
-            <div className="registerPage__confirmPassword">
-              <label htmlFor="confirmPassword">CONFIRM PASSWORD</label>
-              <input
-                type="password"
-                placeholder="CONFIRM PASSWORD"
-                disabled={disablePassword}
-                name="confirmPassword"
-                value={confirmPassword}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
+              <div className="registerPage__confirmPassword">
+                {/* <label htmlFor="confirmPassword">CONFIRM PASSWORD</label> */}
+                <input
+                  className="inputBox"
+                  type="password"
+                  placeholder="CONFIRM PASSWORD"
+                  disabled={disablePassword}
+                  name="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
 
-            <div className="loginPage__button">
-              <input
-                type="submit"
-                value="REGISTER"
-                disabled={disablePassword}
-              />
-            </div>
-          </form>
+              <div className="loginPage__button">
+                <input
+                  className="inputSubmit"
+                  type="submit"
+                  value="REGISTER"
+                  disabled={disablePassword}
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

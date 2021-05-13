@@ -37,38 +37,52 @@ const MobileLogin = ({ sendOtp, verifyOtp, session }) => {
   };
 
   return (
-    <div className="canvas">
-      <div className="canvas__glass">
-        <div className="loginPage">
-          <form className="loginPage__form" onSubmit={(e) => handleSubmit(e)}>
-            <div className="loginPage__form__mobile">
-              <label htmlFor="mobileNo">MOBILE NO</label>
-              <input
-                type="text"
-                placeholder="MOBILE NO"
-                name="mobile"
-                value={mobile}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="loginPage__button">
-              <button onClick={(e) => clickGetOtp(e)}>GET OTP</button>
-            </div>
-            <div className="loginPage__form__password">
-              <label htmlFor="ENTER OTP">ENTER OTP</label>
-              <input
-                type="text"
-                placeholder="ENTER OTP"
-                name="otp"
-                value={otp}
-                disabled={disableOtp}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="loginPage__button">
-              <input type="submit" value="LOGIN" disabled={disableOtp} />
-            </div>
-          </form>
+    <div className="canvas__ball">
+      <div className="loginPage__title">WELCOME TO CHAMPHUNT</div>
+      {/* <div className="loginPage__subtitle">CHAMP LOGIN</div> */}
+      <div className="card">
+        <div className="canvas__bat"></div>
+        <div className="face">
+          <div className="loginPage">
+            <form className="loginPage__form" onSubmit={(e) => handleSubmit(e)}>
+              <div className="loginPage__form__mobile">
+                <label htmlFor="mobileNo">MOBILE NO</label>
+                <input
+                  className="inputBox"
+                  type="text"
+                  placeholder="MOBILE NO"
+                  name="mobile"
+                  value={mobile}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+              <div className="loginPage__button">
+                <button className="inputSubmit" onClick={(e) => clickGetOtp(e)}>
+                  GET OTP
+                </button>
+              </div>
+              <div className="loginPage__form__password">
+                <label htmlFor="ENTER OTP">ENTER OTP</label>
+                <input
+                  className="inputBox"
+                  type="text"
+                  placeholder="ENTER OTP"
+                  name="otp"
+                  value={otp}
+                  disabled={disableOtp}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+              <div className="loginPage__button">
+                <input
+                  className="inputSubmit"
+                  type="submit"
+                  value="LOGIN"
+                  disabled={disableOtp}
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

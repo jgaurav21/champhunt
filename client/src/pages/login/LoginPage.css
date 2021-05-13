@@ -2,19 +2,24 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  /* margin-right: 10%;
+  margin-top: 5%; */
 }
 
 .loginPage__form {
   display: flex;
   flex-direction: column;
-  border: 3px solid white;
+  align-items: center;
+  justify-content: flex-end;
+  /* border: 3px solid white; */
   padding: 30px;
   border-radius: 10px;
+  width: 50%;
 }
 
 .loginPage__form > div {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
 }
@@ -22,10 +27,18 @@
 .loginPage__form > div > input,
 .loginPage__form > div > button {
   margin-left: 15px;
+  font-family: "Orbitron", sans-serif;
+}
+
+.loginPage button {
+  font-family: "Orbitron", sans-serif;
 }
 
 .loginPage__form > div > label {
-  width: 80px;
+  width: 100%;
+  color: white;
+  /* align-items: center; */
+  font-family: "Orbitron", sans-serif;
 }
 
 .loginPage__button {
@@ -41,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .loginPage__socialLogin svg {
@@ -49,4 +63,40 @@
   border-radius: 50%;
   cursor: pointer;
   color: white;
+}
+
+.loginPage__title {
+  position: absolute;
+  top: 8%;
+  left: 48%;
+  height: max-content;
+  transform: translateX(-25%);
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.loginPage__subtitle {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-25%);
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  font-size: 1rem;
+}
+
+.loginPage__base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1c1c25;
+}
+
+.loginPage__register {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

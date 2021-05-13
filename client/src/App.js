@@ -20,6 +20,8 @@ import GoogleLogin from "./pages/login/GoogleLogin";
 
 import Profile from "./pages/profilePages/Profile";
 import Background from "./pages/Background";
+import Card from "./components/card/Card";
+import TestComponent from "./components/TestComponent";
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
             <Route exact path="/googleLogin" component={GoogleLogin} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/page" component={Background} />
+            <Route exact path="/card" component={Card} />
+            <Route exact path="/test" component={TestComponent} />
           </Switch>
         </div>
       </Router>

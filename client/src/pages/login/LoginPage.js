@@ -7,11 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../../components/canvas/Canvas.css";
 import "./LoginPage.css";
+
 import { useState } from "react";
 import { login } from "../../actions/auth";
 import { connect } from "react-redux";
 
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 
 const LoginPage = ({ login }) => {
@@ -29,41 +30,66 @@ const LoginPage = ({ login }) => {
   };
 
   return (
-    <div className="canvas">
-      <div className="canvas__glass">
-        <div className="loginPage">
-          <form className="loginPage__form" onSubmit={(e) => handleSubmit(e)}>
-            <div className="loginPage__form__mobile">
-              <label htmlFor="mobileNo">MOBILE NO</label>
-              <input
-                type="text"
-                placeholder="MOBILE NO"
-                name="mobile"
-                value={mobile}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="loginPage__form__password">
-              <label htmlFor="password">PASSWORD</label>
-              <input
-                type="password"
-                placeholder="PASSWORD"
-                name="password"
-                value={password}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-            <div className="loginPage__button">
-              <input type="submit" value="LOGIN" />
-            </div>
-            <div className="loginPage__socialLogin">
-              {/* <FontAwesomeIcon icon={faGoogle} /> */}
-              <GoogleLogin />
-              <Link to={"/MobileLogin"}>
-                <FontAwesomeIcon icon={faPhone} />
-              </Link>
-            </div>
-          </form>
+    <div className="canvas__ball">
+      <div className="loginPage__title">WELCOME TO CHAMPHUNT</div>
+      {/* <div className="loginPage__subtitle">CHAMP LOGIN</div> */}
+      <div className="card">
+        <div className="canvas__bat"></div>
+        <div className="face">
+          <div className="loginPage">
+            <form className="loginPage__form" onSubmit={(e) => handleSubmit(e)}>
+              <div className="loginPage__form__mobile">
+                {/* <label htmlFor="mobileNo">MOBILE NO</label> */}
+                <input
+                  className="inputBox"
+                  type="text"
+                  placeholder="MOBILE NO"
+                  name="mobile"
+                  value={mobile}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+              <div className="loginPage__form__password">
+                {/* <label htmlFor="password">PASSWORD</label> */}
+                <input
+                  className="inputBox"
+                  type="password"
+                  placeholder="PASSWORD"
+                  name="password"
+                  value={password}
+                  onChange={(e) => handleChange(e)}
+                />
+              </div>
+              <div className="loginPage__button">
+                <input type="submit" value="LOGIN" className="inputSubmit" />
+              </div>
+              <div className="loginPage__socialLogin">
+                {/* <FontAwesomeIcon icon={faGoogle} /> */}
+                <GoogleLogin />
+                <Link to={"/MobileLogin"}>
+                  <FontAwesomeIcon icon={faPhone} />
+                </Link>
+              </div>
+              <div className="loginPage__register">
+                <label>NOT A CHAMPION YET</label>
+              </div>
+              <div className="loginPage__register">
+                {/* <Link to="/register"> */}
+                {/* <input
+                  type="submit"
+                  className="inputSubmit"
+                  value="Register"
+                  // onClick={() => {
+                  //   <Redirect to="/registerPage" />;
+                  // }}
+                /> */}
+                <Link to="/registerPage">
+                  <button className="inputSubmit">REGISTER</button>
+                </Link>
+                {/* </Link> */}
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
