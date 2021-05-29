@@ -1,7 +1,37 @@
-.profilePage {
+.profileContainer {
   display: flex;
-  background: url("../../images/stadium_2.jpg");
-  /* linear-gradient(rgba(0, 0, 34, 0.645), rgba(0, 17, 0, 0.556)); */
-  background-blend-mode: multiply;
-  padding-top: 20px;
+}
+.profileRight {
+  flex: 9;
+}
+
+.profileBottom {
+  display: flex;
+}
+
+.profileTop {
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.profileBottom {
+  margin-top: -175px;
+}
+
+.profileCoverImg {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.profileDisplayPic {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  position: relative;
+  border: 4px solid white;
+  top: -180px;
+  left: 20px;
+  object-fit: cover;
 }

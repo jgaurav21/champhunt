@@ -16,6 +16,7 @@ import Card from "./components/card/Card";
 
 import Pitch from "./pages/pitch/Pitch";
 import Home from "./pages/home/Home";
+import ProfilePage from "./pages/profilePage/ProfilePage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/registerPage" component={RegisterPage} />
             <Route exact path="/mobileLogin" component={MobileLogin} />
             <Route exact path="/googleLogin" component={GoogleLogin} />
+            <Route exact path="/profile" component={ProfilePage} />
 
             <Route exact path="/card" component={Card} />
 
