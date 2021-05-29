@@ -1,5 +1,5 @@
 import "./App.css";
-import Login from "./pages/login/Login";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Register from "./pages/register/Register";
 import { Provider } from "react-redux";
@@ -13,7 +13,7 @@ import MobileLogin from "./pages/login/MobileLogin";
 import GoogleLogin from "./pages/login/GoogleLogin";
 
 import Card from "./components/card/Card";
-import TestComponent from "./components/TestComponent";
+
 import Pitch from "./pages/pitch/Pitch";
 import Home from "./pages/home/Home";
 
@@ -23,8 +23,8 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/" component={LoginPage} />
+            {/* <Route exact path="/login" component={LoginPage} /> */}
             <Route exact path="/Register" component={Register} />
             <Route exact path="/dashboard" component={Dashboard} />
 
@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/googleLogin" component={GoogleLogin} />
 
             <Route exact path="/card" component={Card} />
-            <Route exact path="/test" component={TestComponent} />
+
             <Route exact path="/pitch" component={Pitch} />
 
             <Route exact path="/home" component={Home} />

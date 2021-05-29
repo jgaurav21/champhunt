@@ -1,13 +1,19 @@
 .sidebar {
-  flex: 2.5;
+  flex: 3;
+  margin: 15px;
   min-height: calc(100vh - 50px);
-
   min-width: 275px;
+}
+
+.sidebarSectionHeader {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .sidebarContainer {
   padding: 15px;
-  margin: 15px;
+
   border-radius: 15px;
   box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
@@ -28,7 +34,7 @@
 .sidebarList {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 15px;
 }
 
 .sidebarListItem {

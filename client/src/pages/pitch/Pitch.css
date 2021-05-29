@@ -1,10 +1,10 @@
 .feed {
   flex: 6;
-  margin: 0 15px;
+  margin: 15px;
 }
 
 .feedWrapper {
-  padding: 20px;
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
 }

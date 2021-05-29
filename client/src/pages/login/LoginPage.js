@@ -61,7 +61,9 @@ const LoginPage = ({ login }) => {
                 />
               </div>
               <div className="loginPage__button">
-                <input type="submit" value="LOGIN" className="inputSubmit" />
+                <Link to="/home">
+                  <input type="submit" value="LOGIN" className="inputSubmit" />
+                </Link>
               </div>
               <div className="loginPage__socialLogin">
                 {/* <FontAwesomeIcon icon={faGoogle} /> */}
