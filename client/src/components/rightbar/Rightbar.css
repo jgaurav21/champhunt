@@ -1,0 +1,110 @@
+.rightbar {
+  flex: 3.5;
+  margin: 20px 20px 20px 0;
+}
+
+.righbarSectionHeader {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 15px;
+}
+
+.rightbarHr {
+  margin: 15px;
+}
+
+/* .rightbarContainer {
+  } */
+
+.rightbarBirthday {
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cakeIcon {
+  font-size: 40px !important;
+  margin-right: 10px;
+}
+
+.onlineFriends {
+  box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.onlineFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.onlineFriendStatus {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: limegreen;
+  position: relative;
+  top: -15px;
+  left: -10px;
+}
+
+.onlineFriendImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.onlineFriendName {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.friendSuggestions {
+  box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.friendSuggestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+  border: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.friendSuggestionImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.friendSuggestionName {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.friendSuggestionLeft {
+  display: flex;
+  align-items: center;
+}
+
+.friendSuggestionIcon {
+  cursor: pointer;
+}

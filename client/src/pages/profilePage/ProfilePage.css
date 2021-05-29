@@ -1,0 +1,7 @@
+.profilePage {
+  display: flex;
+  background: url("../../images/stadium_2.jpg");
+  /* linear-gradient(rgba(0, 0, 34, 0.645), rgba(0, 17, 0, 0.556)); */
+  background-blend-mode: multiply;
+  padding-top: 20px;
+}

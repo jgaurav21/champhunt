@@ -1,6 +1,3 @@
-body {
-  overflow: hidden;
-}
 .background {
   display: flex;
   justify-content: center;
@@ -13,8 +10,9 @@ body {
 .background::before {
   content: "";
   position: absolute;
-  bottom: -40%;
-  left: 40%;
+  bottom: -50%;
+  left: 30%;
+  /* transform: translate(-60%, -30%); */
   width: 600px;
   height: 600px;
   background: linear-gradient(#f00, #f0f);
@@ -44,9 +42,9 @@ body {
 }
 
 .face {
-  position: absolute;
-  top: 0%;
-  left: 0%;
+  /* position: absolute; */
+  /* top: 0%;
+  left: 0%; */
   width: 100%;
   height: 100%;
   box-shadow: 15px 15px 25px rgba(0, 0, 0, 2);
