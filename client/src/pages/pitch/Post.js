@@ -11,7 +11,7 @@ import "./Post.css";
 
 const Post = ({ profileImg, postUser, postTime, postMessage, postImg }) => {
   return (
-    <div className="post">
+    <div className="post ">
       <div className="postContainer">
         <div className="postTop">
           <div className="postTop_left">

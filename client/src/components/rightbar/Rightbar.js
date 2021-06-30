@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 import "./Rightbar.css";
 import { Add, Cake } from "@material-ui/icons";
-const Righbar = (props) => {
+const Righbar = ({ profile }) => {
   return (
     <div className="rightbar">
       <div className="rightbarContainer">
         <div className="rightbarBirthday">
           <Cake htmlColor="Pink" className="cakeIcon" />
           <p className="birthdayText">
-            <b>Virat Kohli</b> and <b>3 other firends</b> have birthday today.
+            <b>Virat Kohli</b> and <b>3 other friends</b> have birthday today.
           </p>
         </div>
 

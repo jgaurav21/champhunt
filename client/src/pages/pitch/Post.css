@@ -8,6 +8,7 @@
   -webkit-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 1px 7px 15px 1px rgba(0, 0, 0, 0.6);
   border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .postTop {
@@ -71,4 +72,20 @@
 
 .postHr {
   margin: 15px 0;
+}
+
+.post_glass {
+  box-shadow: 15px 15px 25px rgba(0, 0, 0, 2);
+  border-top: 1px solid
+    linear-gradient(45deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+
+  background:
+   /* rgba(255, 255, 255, 0.3); */ linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+
+  transform-style: preserve-3d;
+  backdrop-filter: blur(10px);
 }

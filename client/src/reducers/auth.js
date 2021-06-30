@@ -8,7 +8,7 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  isAuthenticated: null,
+  isAuthenticated: false,
   loading: true,
   token: null,
 };

@@ -15,7 +15,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
 
-const LoginPage = ({ login }) => {
+const LoginPage = ({ login, isAuthenticated }) => {
   const [loginData, setLoginData] = useState({ mobile: "", password: "" });
   const { mobile, password } = loginData;
 
@@ -28,6 +28,10 @@ const LoginPage = ({ login }) => {
     login(mobile, password);
     setLoginData({ mobile: "", password: "" });
   };
+
+  if (isAuthenticated) {
+    return <Redirect to="/home" />;
+  }
 
   return (
     <div className="canvas__ball">
@@ -61,9 +65,9 @@ const LoginPage = ({ login }) => {
                 />
               </div>
               <div className="loginPage__button">
-                <Link to="/home">
-                  <input type="submit" value="LOGIN" className="inputSubmit" />
-                </Link>
+                {/* <Link to="/home"> */}
+                <input type="submit" value="LOGIN" className="inputSubmit" />
+                {/* </Link> */}
               </div>
               <div className="loginPage__socialLogin">
                 {/* <FontAwesomeIcon icon={faGoogle} /> */}
@@ -82,12 +86,13 @@ const LoginPage = ({ login }) => {
                   className="inputSubmit"
                   value="Register"
                   // onClick={() => {
-                  //   <Redirect to="/registerPage" />;
+                    <Redirect to="/registerPage" />;
                   // }}
                 /> */}
                 <Link to="/registerPage">
                   <button className="inputSubmit">REGISTER</button>
                 </Link>
+
                 {/* </Link> */}
               </div>
             </form>
@@ -100,6 +105,11 @@ const LoginPage = ({ login }) => {
 
 LoginPage.propTypes = {
   login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
-export default connect(null, { login })(LoginPage);
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(LoginPage);

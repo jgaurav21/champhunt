@@ -52,7 +52,7 @@ router.post("/", async (req, res) => {
 
     const user = await User.findOne({ mobile });
     if (!user) {
-      return res.status(400).json({ msg: "Invalid Mobile Number" });
+      return res.status(400).json({ msg: "Invalid mobile or password" });
     }
 
     const validPassword = await bcrypt.compare(password, user.password);
